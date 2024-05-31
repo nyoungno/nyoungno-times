@@ -34,11 +34,13 @@
     </div>
     <i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
 
-    <i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
-    <span id="input-area">
-        <input type="text" id="search-input" placeholder="search" />
-        <button class="search-button" onclick="searchNews()">Go</button>
-    </span>
+    <div class="searchicon">
+        <i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
+        <span id="input-area">
+            <input type="text" id="search-input" placeholder="search" />
+            <button class="search-button" onclick="searchNews()">Go</button>
+        </span>
+    </div>
 
     <section class="container">
         <section>
@@ -73,6 +75,11 @@
         </section>
 
     </section>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-5 mb-5">
+
+        </ul>
+    </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

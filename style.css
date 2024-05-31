@@ -75,3 +75,18 @@
   background-color: beige;
   border-radius: 3px;
 }
+
+.searchicon {
+  margin-left: 50px;
+  width: 300px;
+}
+
+.page-link {
+  color: #000;
+}
+
+.active > .page-link,
+.page-link.active {
+  background-color: #495057;
+  border-color: #495057;
+}
