@@ -65,12 +65,21 @@ const render = () => {
   const newsHTML = newsList
     .map(
       (news) => `<div class="row news">
-  <div class="col-lg-4">
-      <img class="news-img-size" src="${news.urlToImage}">
+  <div class="col-lg-4 news-img-item">
+      <img class="news-img-size" src="${
+        news.urlToImage ||
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEWgS0uxxEYJ0PsOb2OgwyWvC0Gjp8NUdPw&usqp=CAU"
+      }">
   </div>
   <div class="col-lg-8">
       <h2>${news.title}</h2>
-      <P>${news.description}</P>
+      <p>${
+        news.description == null || news.description == ""
+          ? "내용없음"
+          : news.description.length > 200
+          ? news.description.substring(0, 200) + "..."
+          : news.description
+      }</p>
       <div>${news.source.name} * ${news.publishedAt}</div>
   </div>
 </div>`
@@ -111,7 +120,7 @@ const paginationRender = () => {
 
   let paginationHTML = `<li class="page-item" onclick="moveToPage(${
     page - 1
-  })"><a class="page-link" href="#">Previous</a></li>
+  })"><a class="page-link" href="#">◁</a></li>
   `;
 
   for (let i = firstPage; i <= lastPage; i++) {
@@ -121,7 +130,7 @@ const paginationRender = () => {
   }
   paginationHTML += `<li class="page-item" onclick="moveToPage(${[
     page + 1,
-  ]})"><a class="page-link" href="#">Next</a></li>`;
+  ]})"><a class="page-link" href="#">▷</a></li>`;
   document.querySelector(".pagination").innerHTML = paginationHTML;
 };
 

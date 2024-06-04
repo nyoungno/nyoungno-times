@@ -27,9 +27,17 @@
   background-color: beige;
 }
 
+.news-img-item {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
 .news-img-size {
   max-width: 100%;
+  width: 416px;
   max-height: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .news {
@@ -77,8 +85,10 @@
 }
 
 .searchicon {
-  margin-left: 50px;
-  width: 300px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-top: 50px;
 }
 
 .page-link {
@@ -89,4 +99,14 @@
 .page-link.active {
   background-color: #495057;
   border-color: #495057;
+}
+
+.naviconbutton {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .naviconbutton {
+    display: block;
+  }
 }
